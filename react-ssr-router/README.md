@@ -13,6 +13,13 @@
 
 node监控工具, 监控node.js源代码变化
 
+```dev:build-server```
+
+对服务端渲染的代码，打包到build文件夹下
+
+```dev:build-client```
+对客户端的代码，修改后进行实时监听
+
 ## script启动
 ```bash
 # 安装依赖
