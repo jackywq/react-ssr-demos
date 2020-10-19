@@ -1,5 +1,5 @@
 ## 项目描述
-> next服务端渲染的简单例子
+> next + antd + less + Koa服务端渲染例子
 
 ## 涉及技术栈
 > `antd` `next`
