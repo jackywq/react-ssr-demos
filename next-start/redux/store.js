@@ -3,7 +3,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { createStore, applyMiddleware } from 'redux'
 import thunkMiddleware from 'redux-thunk'
 
-import accountReducer from './pages/account/reducer';
+import accountReducer from './account/reducer';
 
 const exampleInitialState = {
     lastUpdate: 0,

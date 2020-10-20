@@ -5,6 +5,7 @@ if(typeof require !== 'undefined'){
 }
 
 module.exports = withLess({
+    distDir: 'build',
     lessLoaderOptions: {
         javascriptEnabled: true,
     },

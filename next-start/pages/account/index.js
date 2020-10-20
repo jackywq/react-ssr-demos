@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Button } from 'antd'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as Actions from './action';
+import * as Actions from '../../redux/account/action';
 
 
 class Account extends Component {
