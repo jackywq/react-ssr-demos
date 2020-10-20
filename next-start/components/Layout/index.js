@@ -10,7 +10,7 @@ export default class Layout extends React.Component {
                   <meta name='viewport' content='width=device-width, initial-scale=1' />
                   <meta charSet='utf-8' />
                   <title>NEXT-START</title>
-                  <link rel='shortcut icon' href='/static/favicon.ico' type='image/ico'/>
+                  <link rel='shortcut icon' href='/../static/favicon.ico' type='image/ico'/>
               </Head>
               <Header />
               <div className="layout">{children}</div>
