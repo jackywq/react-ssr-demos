@@ -24,16 +24,17 @@ export default class Headers extends Component {
         const activeKey = e.key;
         this.setState({ activeKey });
         Router.push(`/${activeKey}`);
+        // url跳转别名设置
+        // Router.push(`/${activeKey}`, '/1111');
     }
 
     render() {
         const { activeKey } = this.state;
-        console.log('activeKey :>> ', activeKey);
+        
         return (
             <div>
                 <Layout>
                     <Header className="header">
-                    {/* <link rel="shortcut icon" type="image/ico" href="https://image-c.weimobwmc.com/wrz/93e0dbec0f594d67b3eb2ccaa1ba0837.ico" /> */}
                         <Row>
                             <Col span={2}></Col>
                             <Col 

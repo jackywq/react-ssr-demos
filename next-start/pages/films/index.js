@@ -6,13 +6,14 @@ import './index.less'
 
 class Films extends Component {
     // getInitialProps只能在服务端执行，无跨域限制, 不能在子组件里使用
-    static async getInitialProps() {
+    static async getInitialProps({ pathname, query, req }) {
         const res = await axios.get('https://m.maizuo.com/gateway?cityId=310100&pageNum=1&pageSize=10&type=2&k=9091390', {
             headers: {
                 'X-Host': 'mall.film-ticket.film.list'
             }
         })
 
+        console.log('生命周期方法: getInitialProps');
         return {
             films: res.data.data.films
         }
