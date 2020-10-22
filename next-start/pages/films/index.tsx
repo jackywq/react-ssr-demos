@@ -4,7 +4,12 @@ import axios from 'axios'
 import { withRouter } from 'next/router'
 import styles from './index.module.less'
 
-class Films extends Component {
+export interface IProps {
+    films: any[];
+    router: any;
+}
+
+class Films extends Component<IProps> {
     // getInitialProps只能在服务端执行，无跨域限制, 不能在子组件里使用
     static async getInitialProps({ pathname, query, req }) {
         const res = await axios.get('https://m.maizuo.com/gateway?cityId=310100&pageNum=1&pageSize=10&type=2&k=9091390', {

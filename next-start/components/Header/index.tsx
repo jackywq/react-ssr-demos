@@ -5,8 +5,12 @@ import './index.less';
 
 const { Header } = Layout;
 
-export default class Headers extends Component {
-    state = {
+export interface IState {
+    activeKey: string;
+}
+
+export default class Headers extends Component<null, IState> {
+    state: IState = {
         activeKey: 'home'
     }
 

@@ -4,8 +4,16 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as Actions from '../../redux/account/action';
 
+export interface IProps {
+    incrementCount: () => void;
+    decrementCount: () => void;
+    resetCount: () => void;
+    accountReducer: {
+        count: number;
+    }
+}
 
-class Account extends Component {
+class Account extends Component<IProps> {
     handleIncrement = () => {
         this.props.incrementCount()
     }

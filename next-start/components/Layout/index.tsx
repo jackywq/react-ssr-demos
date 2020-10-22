@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import Head from 'next/head';
 import Header from "../Header";
+
 export default class Layout extends React.Component {
     render() {
       const { children } = this.props;
