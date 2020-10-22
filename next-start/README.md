@@ -29,6 +29,7 @@ npm run start
 ├── pages
     ├── _app.js  // 自定义app文件
     ├── _error.js  // 自定义错误页面
+    ├── index.js  // 默认导出的页面
     ├── ... // 页面组件
 ├── redux  // redux状态管理
 ├── static  // 存放静态文件
