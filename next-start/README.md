@@ -1,7 +1,7 @@
 ## 项目描述
-> next + antd + redux + less + Koa服务端渲染脚手架
+next服务端渲染脚手架
 
-## 启动命令介绍
+## 启动
 ```
 // 本地代码调试
 npm run dev
@@ -12,6 +12,15 @@ npm run build
 // 对打包好的代码进行测试
 npm run start
 ```
+
+## 功能
+
+- 支持热加载
+- antd
+- redux
+- koa
+- less，支持cssModules
+
 ## 目录说明
 ```
 |── build // 打包文件
@@ -25,3 +34,6 @@ npm run start
 ├── static  // 存放静态文件
 ```
 
+## 文件命名规范
+ - redux文件夹下的模块命名需和pages命名保持一致
+ - less文件格式需使用.module.less格式，方可使用cssModules语法

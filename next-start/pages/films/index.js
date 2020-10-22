@@ -2,7 +2,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'next/router'
-import './index.less'
+import styles from './index.module.less'
 
 class Films extends Component {
     // getInitialProps只能在服务端执行，无跨域限制, 不能在子组件里使用
@@ -30,7 +30,7 @@ class Films extends Component {
                             return (
                                 <li key={item.filmId}>
                                     <div>
-                                        <div className="name">{item.name}</div>
+                                        <div className={styles.name}>{item.name}</div>
                                         <img src={item.poster} alt=""/>
                                     </div>
                                 </li>

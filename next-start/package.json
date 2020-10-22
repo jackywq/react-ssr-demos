@@ -1,14 +1,14 @@
 {
   "name": "next-start",
   "version": "1.0.0",
-  "description": "",
+  "description": "next.js服务端渲染脚手架",
   "main": "index.js",
   "scripts": {
     "dev": "node ./server.js",
     "build": "next build",
     "start": "next start -p 80"
   },
-  "author": "",
+  "author": "quan.wang",
   "license": "ISC",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
@@ -32,7 +32,9 @@
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@zeit/next-typescript": "^1.1.1",
     "koa-router": "^9.4.0",
+    "nodemon": "^2.0.6",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0"
