@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node ./server.js",
     "build": "next build",
-    "start": "next start -p 80"
+    "start": "next start -p 80",
+    "lint-js": "eslint --fix --ext .js,.jsx,.ts,tsx pages/"
   },
   "author": "quan.wang",
   "license": "ISC",
@@ -34,9 +35,17 @@
     "@babel/plugin-proposal-decorators": "^7.12.1",
     "@types/node": "^14.14.2",
     "@types/react": "^16.9.53",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
     "@zeit/next-typescript": "^1.1.1",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.14.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.5",
     "koa-router": "^9.4.0",
     "nodemon": "^2.0.6",
+    "prettier": "^2.1.2",
     "redux-devtools-extension": "^2.13.8",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
