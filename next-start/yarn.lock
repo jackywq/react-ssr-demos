@@ -5111,7 +5111,7 @@ next-tick@~1.0.0:
   resolved "https://registry.npm.taobao.org/next-tick/download/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next@^9.5.4:
+next@^9.5.5:
   version "9.5.5"
   resolved "https://registry.npm.taobao.org/next/download/next-9.5.5.tgz#37a37095e7c877ed6c94ba82e34ab9ed02b4eb33"
   integrity sha1-N6NwlefId+1slLqC40q57QK06zM=

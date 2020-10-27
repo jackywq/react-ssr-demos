@@ -1,7 +1,6 @@
 import React from "react";
+import Exception from "components/Exception";
 
-const NoPremission = () => {
-  return <div>对不起，您无权访问该页面!</div>;
-};
+const Exception404 = () => <Exception type="403" />;
 
-export default NoPremission;
+export default Exception404;

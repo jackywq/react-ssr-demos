@@ -49,6 +49,7 @@ export default class Header extends Component<any, IState> {
                   <Menu.Item key="home">首页</Menu.Item>
                   <Menu.Item key="films">电影列表</Menu.Item>
                   <Menu.Item key="account">计数器</Menu.Item>
+                  <Menu.Item key="detail">详情</Menu.Item>
                 </Menu>
               </Col>
             </Row>

@@ -4,14 +4,14 @@ import { Provider } from "react-redux";
 import Router from "next/router";
 import Layout from "../components/Layout";
 import withReduxStore from "../lib/with-redux-store";
-import "antd/dist/antd.less";
+import "antd/dist/antd.css";
 
 /**
  * routeChangeStart：路由切换时触发
  * beforePopState: 拦截器, return false不会作拦截
  */
 Router.events.on("routeChangeStart", (url) => {
-  if (url.indexOf("count") > 0) {
+  if (url.indexOf("detail") > 0) {
     Router.push("/nopermission");
   }
 });
