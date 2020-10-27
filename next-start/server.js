@@ -1,36 +1,34 @@
-const Koa = require("koa");
+const express = require("express");
 const next = require("next");
-const Router = require("koa-router");
 
+// 获取端口
+const port = parseInt(process.env.PORT, 10) || 3000;
+
+// 获取当前环境
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
-const handle = app.getRequestHandler(); // 拿到 http 请求的响应
+
+// 获取http请求的响应
+const handle = app.getRequestHandler();
 
 /**
  * 1. app.prepare：编译 pages 文件夹下面的页面文件
- * 2. 使用koa声明server
+ * 2. 使用express声明server
+ * 3. server.get('/**')自定义路由  server.get("*") http请求
  */
 app.prepare().then(() => {
-  const server = new Koa();
-  const router = new Router();
+  const server = new express();
 
-  router.get("/accounts", async (ctx) => {
-    await app.render(ctx.req, ctx.res, "/account", ctx.query);
-    ctx.respond = false;
+  server.get("/a", (req, res) => {
+    return app.render(req, res, "/account", req.query);
   });
 
-  /** 这是 Koa 的核心用法：中间件。通常给 use 里面写一个函数，这个函数就是中间件。
-   * params:
-   *  ctx: Koa Context 将 node 的 request 和 response 对象封装到单个对象中，为请求上下文对象
-   *  next: 调用后将执行流程转入下一个中间件，如果当前中间件中没有调用 next，整个中间件的执行流程则会在这里终止，后续中间件不会得到执行
-   */
-
-  server.use(router.routes());
-
-  server.use(async (ctx, next) => {
-    await handle(ctx.req, ctx.res);
-    ctx.response = false;
+  server.get("*", (req, res) => {
+    return handle(req, res);
   });
 
-  server.listen(3000);
+  server.listen(port, (err) => {
+    if (err) throw err;
+    console.log(`> Ready on http://localhost:${port}`);
+  });
 });

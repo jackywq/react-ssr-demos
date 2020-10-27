@@ -16,6 +16,7 @@ module.exports = withLessExcludeAntd({
   },
 
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
+    // dev环境, 使用eslint-loader
     if (dev) {
       config.module.rules.push({
         test: /\.(ts|tsx)$/,
@@ -25,7 +26,7 @@ module.exports = withLessExcludeAntd({
           path.resolve("pages"),
           path.resolve("redux"),
         ],
-        exclude: [/node_modules/, /.next/],
+        exclude: [/node_modules/, /.next/, /build/, /lib/],
         options: {
           configFile: path.resolve(".eslintrc"),
           eslint: {
@@ -34,8 +35,18 @@ module.exports = withLessExcludeAntd({
         },
         loader: "eslint-loader",
       });
-      config.devtool = "source-map";
     }
+
+    //自动解析后缀名
+    config.resolve.extensions.concat([".ts", ".tsx", ".js", ".jsx", ".json"]);
+
+    // 路径设置别名
+    Object.assign(config.resolve.alias, {
+      components: path.resolve(__dirname, "./components"),
+      "@": path.resolve(__dirname, "./pages"),
+    });
+
+    console.log("config.resolve :>> ", config.resolve);
     return config;
   },
 });

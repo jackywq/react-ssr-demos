@@ -9,7 +9,8 @@ npm run dev
 // 打包代码
 npm run build
 
-// 对打包好的代码进行测试
+
+// 对打包好的代码进行测试【执行npm run start需要先执行npm run build, 否则会报错】
 npm run start
 ```
 

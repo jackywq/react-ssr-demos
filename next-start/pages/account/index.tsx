@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button } from "antd";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { SpinWrap } from "components/HOC";
 import * as Actions from "../../redux/account/action";
 
 export interface IProps {
@@ -11,8 +12,11 @@ export interface IProps {
   accountReducer: {
     count: number;
   };
+  startSpin: () => void;
+  stopSpin: () => void;
 }
 
+@SpinWrap()
 class Account extends Component<IProps> {
   handleIncrement = () => {
     this.props.incrementCount();
@@ -26,6 +30,13 @@ class Account extends Component<IProps> {
     this.props.resetCount();
   };
 
+  componentDidMount() {
+    const { startSpin, stopSpin } = this.props;
+    startSpin();
+    setTimeout(() => {
+      stopSpin();
+    }, 1000);
+  }
   render() {
     const {
       accountReducer: { count },
