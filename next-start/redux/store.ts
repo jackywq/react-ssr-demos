@@ -6,7 +6,7 @@ import thunkMiddleware from "redux-thunk";
 import accountReducer from "./account/reducer";
 
 export interface InitialState {
-  [key: string]: any;
+  [key: string]: number;
 }
 
 const exampleInitialState = {

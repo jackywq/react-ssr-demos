@@ -20,6 +20,7 @@ module.exports = withLessExcludeAntd({
     if (dev) {
         config.module.rules.push({
             test: /\.(ts|tsx)$/,
+            // 优先处理
             enforce: "pre",
             include: [
                 path.resolve("components"),
@@ -35,7 +36,7 @@ module.exports = withLessExcludeAntd({
             },
             loader: "eslint-loader",
         });
-        }
+    }
 
         //自动解析后缀名
         config.resolve.extensions.concat([".ts", ".tsx", ".js", ".jsx", ".json"]);

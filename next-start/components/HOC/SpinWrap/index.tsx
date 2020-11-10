@@ -11,9 +11,13 @@ interface IProps {
   isSpin: boolean;
 }
 
+export const tuple = <T extends string[]>(...args: T) => args;
+const sizeTypes = tuple("default", "small", "large");
+export type sizeType = typeof sizeTypes[number];
+
 interface IParams {
   spinning?: boolean;
-  size?: string;
+  size?: sizeType;
 }
 
 export default ({ spinning = false, size = "large" }: IParams = {}) => (

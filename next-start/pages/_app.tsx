@@ -27,7 +27,7 @@ Router.events.on("routeChangeStart", (url) => {
 
 class MyApp extends App {
   render() {
-    const { Component, pageProps, reduxStore } = this.props;
+    const { Component, pageProps, reduxStore } = this.props as any;
     return (
       <Container>
         <Provider store={reduxStore}>
