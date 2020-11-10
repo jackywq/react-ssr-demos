@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { withRouter } from "next/router";
-import styles from "./index.module.less";
-
+import "./index.less";
 export interface IProps {
   films: any[];
   router: any;
@@ -30,14 +29,14 @@ class Films extends Component<IProps> {
     const { films, router } = this.props;
 
     return (
-      <div>
+      <div className="films">
         <a onClick={() => router.push("/")}>返回首页</a>
         <ul>
           {films.map((item) => {
             return (
               <li key={item.filmId}>
                 <div>
-                  <div className={styles.name}>{item.name}</div>
+                  <div className="name">{item.name}</div>
                   <img src={item.poster} alt="" />
                 </div>
               </li>

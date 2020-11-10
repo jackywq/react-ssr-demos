@@ -1,10 +1,10 @@
 import React from "react";
 import { Button } from "antd";
-import styles from "./index.module.less";
+import "./index.less";
 
 export default function Home() {
   return (
-    <div className={styles.home}>
+    <div className="home">
       <h2>Hello Next.js</h2>
       <Button>按钮</Button>
     </div>
