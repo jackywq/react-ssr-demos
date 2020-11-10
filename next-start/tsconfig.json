@@ -6,9 +6,11 @@
       "dom.iterable",
       "esnext"
     ],
+    "baseUrl": ".",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
@@ -18,11 +20,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "experimentalDecorators": true,
+    "suppressExcessPropertyErrors": true,
     "alwaysStrict": false,
+    "noEmitOnError": true, 
   },
   "paths": {
-    "components/*": ["./components/*"],
-    "@": ["./pages/*"],
+    "components": ["./components"],
+    "pages": ["./pages"],
   },
   "include": [
     "next-env.d.ts",

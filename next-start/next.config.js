@@ -44,7 +44,7 @@ module.exports = withLessExcludeAntd({
         // 路径设置别名
         Object.assign(config.resolve.alias, {
             components: path.resolve(__dirname, "./components"),
-            "@": path.resolve(__dirname, "./pages"),
+            pages: path.resolve(__dirname, "./pages"),
         });
 
         return config;
