@@ -27,6 +27,7 @@
   "paths": {
     "components": ["./components"],
     "pages": ["./pages"],
+    "servers": ["./servers"],
   },
   "include": [
     "next-env.d.ts",

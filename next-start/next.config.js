@@ -15,6 +15,12 @@ module.exports = withLessExcludeAntd({
     javascriptEnabled: true,
   },
 
+  /**
+   * @param buildId 构建唯一标识
+   * @param dev true: 开发环境, false: 生产环境
+   * @param isServer true: 服务端,  false: 客户端
+   * @param defaultLoaders 内部加载器
+  */
   webpack: (config, { buildId, dev, isServer, defaultLoaders }) => {
     // dev环境, 使用eslint-loader
     if (dev) {
@@ -45,6 +51,7 @@ module.exports = withLessExcludeAntd({
         Object.assign(config.resolve.alias, {
             components: path.resolve(__dirname, "./components"),
             pages: path.resolve(__dirname, "./pages"),
+            servers: path.resolve(__dirname, "./servers"),
         });
 
         return config;

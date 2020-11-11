@@ -8,7 +8,7 @@ import "antd/dist/antd.css";
 
 /**
  * routeChangeStart：路由切换时触发
- * beforePopState: 拦截器, return false不会作拦截
+ *  * beforePopState: 拦截器, return false不会作拦截
  */
 Router.events.on("routeChangeStart", (url) => {
   if (url.indexOf("detail") > 0) {

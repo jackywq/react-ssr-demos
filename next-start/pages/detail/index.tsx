@@ -6,7 +6,9 @@ export interface IProps {}
 
 class Detail extends Component<IProps> {
   render() {
-    return <div>详情</div>;
+    return (
+      <div style={{ width: 1000, height: 1000, fontSize: 30 }}>详情页</div>
+    );
   }
 }
 
