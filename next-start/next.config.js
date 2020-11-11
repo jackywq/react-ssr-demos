@@ -12,7 +12,13 @@ module.exports = withLessExcludeAntd({
 
   // 支持less
   lessLoaderOptions: {
+    // 支持js方式的样式计算  
     javascriptEnabled: true,
+  },
+  cssLoaderOptions: {
+    importLoaders: 1,
+    // 类名hash化
+    localIdentName: "[local]___[hash:base64:5]",
   },
 
   /**
