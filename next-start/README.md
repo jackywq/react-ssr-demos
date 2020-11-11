@@ -33,6 +33,7 @@ npm run start
     ├── index.js  // 默认导出的页面
     ├── ... // 页面组件
 ├── redux  // redux状态管理
+├── servers  // 管理所有文件的接口
 ├── static  // 存放静态文件
 ```
 
