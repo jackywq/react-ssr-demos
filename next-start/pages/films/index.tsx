@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 // import axios from "axios";
+import { Button } from "antd";
 import Router, { withRouter } from "next/router";
 import { getFilmsList } from "servers/films";
 import "./index.less";
@@ -27,7 +28,9 @@ class Films extends Component<IProps> {
 
     return (
       <div className="films">
-        <a onClick={() => router.push("/")}>返回首页</a>
+        <Button type="primary" onClick={() => router.push("/")}>
+          返回首页
+        </Button>
         <ul>
           {films.map((item) => {
             return (
