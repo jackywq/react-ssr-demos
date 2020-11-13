@@ -7,23 +7,13 @@ import withReduxStore from "../lib/with-redux-store";
 import "antd/dist/antd.css";
 
 /**
- * routeChangeStart：路由切换时触发
- *  * beforePopState: 拦截器, return false不会作拦截
+ * beforeHistoryChange 浏览器开始切换时触发
  */
-Router.events.on("routeChangeStart", (url) => {
+Router.events.on("beforeHistoryChange", (url) => {
   if (url.indexOf("detail") > 0) {
     Router.push("/nopermission");
   }
 });
-
-// Router.beforePopState(({ url, as, options }) => {
-//     if (as !== "/other") {
-//       window.location.href = as
-//       return false
-//     }
-
-//     return true
-// });
 
 class MyApp extends App {
   render() {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import axios from "axios";
+import axios from "axios";
 import { Button } from "antd";
 import Router, { withRouter } from "next/router";
 import { getFilmsList } from "servers/films";
@@ -17,9 +17,16 @@ export interface IState {
 class Films extends Component<IProps> {
   // 无跨域限制, 不能在子组件里使用
   static async getInitialProps() {
-    const films = await getFilmsList();
+    const res = await axios.get(
+      "https://m.maizuo.com/gateway?cityId=310100&pageNum=1&pageSize=10&type=2&k=9091390",
+      {
+        headers: {
+          "X-Host": "mall.film-ticket.film.list",
+        },
+      }
+    );
     return {
-      films,
+      films: res.data.data.films,
     };
   }
 
