@@ -1,5 +1,6 @@
 const withLessExcludeAntd = require("./next-less.config.js");
 const path = require("path");
+const lessToJS = require('less-vars-to-js');
 
 // 当节点需要less文件时，防止错误
 if (typeof require !== "undefined") {
@@ -14,6 +15,11 @@ module.exports = withLessExcludeAntd({
   lessLoaderOptions: {
     // 支持js方式的样式计算  
     javascriptEnabled: true,
+
+    // 定义less主题
+    modifyVars: lessToJS(
+        fs.readFileSync(path.resolve(__dirname, './assets/antd-custom.less'), 'utf8')
+    )
   },
   cssLoaderOptions: {
     importLoaders: 1,
