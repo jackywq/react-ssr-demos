@@ -1,8 +1,11 @@
 ## 项目描述
 next服务端渲染脚手架
 
-## 启动
+## 运行项目
 ```
+// 打开对应的项目
+cd next-start
+
 // 本地代码调试
 npm run dev
 
@@ -13,7 +16,6 @@ npm run build
 // 对打包好的代码进行测试【执行npm run start需要先执行npm run build, 否则会报错】
 npm run start
 ```
-
 ## 功能
 
 - 支持热加载
